@@ -11,13 +11,83 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
   <style>
     body {
       background: #f8fafc;
       font-family: 'Segoe UI', sans-serif;
       color: #0f172a;
+      /* Push content below fixed header */
+      padding-top: 72px;
     }
 
+    /* ─── FIXED HEADER ─────────────────────────────────── */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #0f172a;
+    }
+
+    .header-brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .header-brand span {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+    }
+
+    .btn-header {
+      background: #16a34a;
+      color: white;
+      padding: 10px 26px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-header:hover {
+      background: #15803d;
+      color: white;
+      transform: scale(1.04);
+    }
+
+    /* ─── HERO ─────────────────────────────────────────── */
     .hero {
       padding: 100px 20px;
       text-align: center;
@@ -79,6 +149,7 @@
       font-size: 22px;
     }
 
+    /* ─── SCREENSHOTS ───────────────────────────────────── */
     .section {
       padding: 80px 20px;
     }
@@ -95,12 +166,68 @@
       transform: scale(1.05);
     }
 
+    /* ─── REVIEWS ───────────────────────────────────────── */
     .card {
       border-radius: 20px;
       border: none;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
+    /* ─── RECURSOS DO JOGO ──────────────────────────────── */
+    .recursos-section {
+      padding: 80px 20px;
+      background: #f8fafc;
+    }
+
+    .recursos-section h2 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .recursos-section .lead {
+      color: #64748b;
+      font-size: 16px;
+      margin-top: 8px;
+    }
+
+    .recurso-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border: 1px solid #f1f5f9;
+      height: 100%;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .recurso-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(22,163,74,0.12);
+    }
+
+    .recurso-icon {
+      width: 48px;
+      height: 48px;
+      color: #16a34a;
+      margin-bottom: 18px;
+    }
+
+    .recurso-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .recurso-card p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
     footer {
       background: #0f172a;
       color: #e5e7eb;
@@ -124,7 +251,30 @@
 
 <body>
 
-<!-- HERO -->
+<!-- ─── FIXED HEADER ─────────────────────────────────────── -->
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="header-brand">
+      <img src="images/icon.png" alt="Copa Brasil Icon">
+      <span>COPA BRASIL</span>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.MELODEV.COPABRASIL"
+       target="_blank"
+       class="btn-header">
+      <!-- Download icon via Lucide -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Baixar Agora
+    </a>
+  </div>
+</header>
+
+<!-- ─── HERO ────────────────────────────────────────────── -->
 <section class="hero">
   <div class="container">
 
@@ -156,7 +306,7 @@
   </div>
 </section>
 
-<!-- SCREENSHOTS SLIDER -->
+<!-- ─── SCREENSHOTS SLIDER ──────────────────────────────── -->
 <section class="section">
   <div class="container text-center">
     <h2 class="mb-5">Imagens do Jogo</h2>
@@ -182,7 +332,6 @@
 
       </div>
 
-      <!-- Controles -->
       <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Anterior</span>
@@ -196,8 +345,7 @@
   </div>
 </section>
 
-<!-- MODAIS PARA IMAGENS -->
-<!-- Repete o bloco abaixo para cada screenshot -->
+<!-- ─── MODAIS ───────────────────────────────────────────── -->
 <div class="modal fade" id="modalShot1" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-transparent border-0">
@@ -205,7 +353,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="modalShot2" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-transparent border-0">
@@ -213,7 +360,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="modalShot3" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-transparent border-0">
@@ -221,7 +367,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="modalShot4" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-transparent border-0">
@@ -229,7 +374,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="modalShot5" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-transparent border-0">
@@ -237,7 +381,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="modalShot6" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-transparent border-0">
@@ -246,13 +389,12 @@
   </div>
 </div>
 
-<!-- REVIEWS -->
+<!-- ─── REVIEWS ──────────────────────────────────────────── -->
 <section class="section bg-white">
   <div class="container text-center">
     <h2 class="mb-5">O que os jogadores dizem</h2>
 
     <div class="row g-4">
-
       <div class="col-md-4">
         <div class="card p-4">
           <div class="stars">★★★★★</div>
@@ -260,7 +402,6 @@
           <strong>— Carlos R.</strong>
         </div>
       </div>
-
       <div class="col-md-4">
         <div class="card p-4">
           <div class="stars">★★★★★</div>
@@ -268,7 +409,6 @@
           <strong>— João S.</strong>
         </div>
       </div>
-
       <div class="col-md-4">
         <div class="card p-4">
           <div class="stars">★★★★★</div>
@@ -276,12 +416,78 @@
           <strong>— Matheus L.</strong>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RECURSOS DO JOGO ──────────────────────────────────── -->
+<section class="recursos-section">
+  <div class="container text-center">
+    <h2>Recursos do Jogo</h2>
+    <p class="lead">Descubra o que torna COPA BRASIL único e emocionante</p>
+
+    <div class="row g-4 mt-4">
+
+      <!-- Atmosfera Brasileira -->
+      <div class="col-md-3 col-sm-6">
+        <div class="recurso-card text-start">
+          <svg class="recurso-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/><!-- trophy simplified -->
+            <path d="M8 21h8M12 17v4"/>
+            <path d="M5 3h14l-1 8H6L5 3z"/>
+          </svg>
+          <h4>Atmosfera Brasileira</h4>
+          <p>Entre na atmosfera autêntica dos estádios brasileiros em festa com torcida animada.</p>
+        </div>
+      </div>
+
+      <!-- Jogabilidade Intuitiva -->
+      <div class="col-md-3 col-sm-6">
+        <div class="recurso-card text-start">
+          <svg class="recurso-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="4"/>
+            <line x1="12" y1="10" x2="12" y2="14"/>
+            <line x1="10" y1="12" x2="14" y2="12"/>
+            <circle cx="17" cy="11" r="1" fill="currentColor"/>
+            <circle cx="19" cy="13" r="1" fill="currentColor"/>
+          </svg>
+          <h4>Jogabilidade Intuitiva</h4>
+          <p>Controles simples e fluidos para uma experiência de jogo envolvente e divertida.</p>
+        </div>
+      </div>
+
+      <!-- Atualizações Constantes -->
+      <div class="col-md-3 col-sm-6">
+        <div class="recurso-card text-start">
+          <svg class="recurso-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          <h4>Atualizações Constantes</h4>
+          <p>Melhorias e novos recursos adicionados regularmente baseados no feedback dos jogadores.</p>
+        </div>
+      </div>
+
+      <!-- Times Brasileiros -->
+      <div class="col-md-3 col-sm-6">
+        <div class="recurso-card text-start">
+          <svg class="recurso-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          <h4>Times Brasileiros</h4>
+          <p>Jogue com seus times favoritos do futebol brasileiro na competição mais emocionante.</p>
+        </div>
+      </div>
 
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ─── FOOTER ───────────────────────────────────────────── -->
 <footer>
   <p>© 2026 Copa Brasil - O Jogo</p>
   <p>
